@@ -4,7 +4,7 @@ This project is based on the [posting](https://www.joe-bergeron.com/posts/Writin
 
 ## What you need
 
-- Texteditor
+- Text editor
 - NASM
 - Bochs or QEMU
 
