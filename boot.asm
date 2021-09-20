@@ -4,8 +4,8 @@ mov ax, 0x7C0   ; ax = accumaltor for operator and data
 mov ds, ax      ; ds = data segment
 mov ax, 0x7E0
 mov ss, ax      ; ss = stack segment register
-mov sp, 0x2000
-
+mov sp, 0x2000  ; sp = stack pointer
+qem
 call clearscreen
 
 push 0x0000
@@ -20,17 +20,17 @@ cli
 hlt
 
 clearscreen:
-    push bp
+    push bp     ; bp = base pointer
     mov bp, sp
     pusha
 
-    mov ah, 0x07
-    mov al, 0x00
-    mov bh, 0x07
-    mov cx, 0x00
-    mov dh, 0x18
-    mov dl, 0x4f
-    int 0x10
+    mov ah, 0x00    ; scroll down window
+    mov al, 0x00    ; clear
+    mov bh, 0x07    ; set color
+    mov cx, 0x00    ; set position
+    mov dh, 0x18    ; rows
+    mov dl, 0x4f    ; columns
+    int 0x10        ; video interrupt
 
     popa
     mov sp, bp
@@ -42,9 +42,9 @@ movecursor:
     mov bp, sp
     pusha
 
-    mov dx, [bp+4]
-    mov ah, 0x02
-    mov bh, 0x00
+    mov dx, [bp+4]  ; get argument
+    mov ah, 0x02    ; set cursor position
+    mov bh, 0x00    ; page
     int 0x00
 
     popa

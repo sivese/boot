@@ -1,6 +1,6 @@
 # Simple bootloader
 
-This project is based on the [posting](https://www.joe-bergeron.com/posts/Writing%20a%20Tiny%20x86%20Bootloader/) of this blog. 
+This project is based on the [posting1](https://www.joe-bergeron.com/posts/Writing%20a%20Tiny%20x86%20Bootloader/), [posting2](http://3zanders.co.uk/2017/10/13/writing-a-bootloader/). 
 
 ## What you need
 
